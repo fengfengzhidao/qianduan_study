@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>symbol和bigint</title>
+</head>
+<body>
+<script>
+    const obj = {
+        "name": "张三",
+        "age": "14"
+    }
+
+    obj["name"] = "枫枫"
+    console.log(obj) // 这个时候，name属性对应的值已经被替换了
+
+    const zhangsan = Symbol("name")
+    const fengfeng = Symbol("name")
+    const obj1 = {
+        [fengfeng]: "枫枫"
+    }
+
+    obj1[zhangsan] = "张三"
+    console.log(obj1)
+    console.log(zhangsan===fengfeng)
+    console.log(zhangsan==fengfeng)
+    console.log(obj1[Symbol("name")])
+    console.log(obj1[fengfeng])
+    console.log(obj1[zhangsan])
+
+    const b1 = BigInt(10001)
+    console.log(b1, typeof b1)
+    console.log(b1 + BigInt(10086))
+    const b2 = 10002n
+    console.log(b2, typeof b2)
+
+</script>
+</body>
+</html>

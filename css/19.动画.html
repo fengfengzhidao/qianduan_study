@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <style>
+        @keyframes box_move {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(1000px, 0);
+            }
+        }
+
+        .box {
+            width: 40px;
+            height: 40px;
+            background-color: #800e0e;
+            animation-name: box_move;
+            animation-duration: 7s;
+            animation-iteration-count: infinite;
+        }
+
+        .box:hover {
+            animation-play-state: paused;
+        }
+
+        .tags {
+            width: 400px;
+            height: 400px;
+            background-color: #f0eeee;
+            position: relative;
+        }
+
+        @keyframes move {
+            0% {
+                left: 0;
+                top: 0;
+                background-color: #800e0e;
+            }
+            25% {
+                left: calc(100% - 20px);
+                top: 0;
+                background-color: #11c24f;
+            }
+            50% {
+                left: calc(100% - 20px);
+                top: calc(100% - 20px);
+                background-color: #247ad0;
+            }
+            75% {
+                left: 0;
+                top: calc(100% - 20px);
+                background-color: #efa927;
+            }
+            100% {
+                left: 0;
+                top: 0;
+                background-color: #800e0e;
+            }
+        }
+
+        .sub {
+            width: 20px;
+            height: 20px;
+            background-color: #247ad0;
+            position: absolute;
+            animation-name: move;
+            animation-duration: 7s;
+            animation-iteration-count: infinite;
+        }
+
+        .bt{
+            width: 100px;
+            height: 100px;
+            background-color: #6299e5;
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+
+</div>
+
+<div class="tags">
+    <div class="sub"></div>
+</div>
+
+<div class="bt">
+
+</div>
+</body>
+</html>

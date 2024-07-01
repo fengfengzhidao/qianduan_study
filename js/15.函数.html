@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>函数</title>
+</head>
+<body>
+<script>
+    function hello() {
+        console.log("hello")
+    }
+
+    hello()
+
+    const say = function () {
+        console.log("say")
+    }
+    say()
+
+    const eat = () => {
+        console.log("eat")
+    }
+    eat();
+
+    (function () {
+        console.log("立即执行")
+    })();
+
+    function add(a, b) {
+        return a + b
+    }
+
+    console.log(add(1, 2))
+
+
+    function getName(name = "feng") {
+        // if (name === undefined){
+        //     return "feng"
+        // }
+        // name = name || "feng"
+        return name
+    }
+
+    console.log(getName(123))
+
+
+    function sum(...list) {
+        let res = 0
+        for (const listElement of list) {
+            res += listElement
+        }
+        return res
+    }
+
+    console.log(sum(2, 3))
+    console.log(sum(2, 3, 2, 3, 45))
+
+    function sum1(a) {
+        let res = 0
+        for (const listElement of arguments) {
+            res += listElement
+        }
+        return res
+    }
+    console.log(sum1(2, 3))
+    console.log(sum1(2, 3, 2, 3, 45))
+
+
+
+</script>
+</body>
+</html>

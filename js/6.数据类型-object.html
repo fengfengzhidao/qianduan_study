@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>数据类型-object</title>
+</head>
+<body>
+<script>
+    const lyf = {
+        "name": "lyf",
+        "age": 18
+    }
+    const lyf1 = {
+        name: "lyf",
+        age: 18
+    }
+    console.log(lyf, typeof lyf)
+    console.log(lyf1, typeof lyf1)
+
+    console.log(lyf.name)
+    console.log(lyf["name"])
+
+    lyf.addr = "湖南"
+    lyf["xxx"] = "yyy"
+    console.log(lyf)
+
+    lyf.age = 19
+    console.log(lyf)
+
+    delete lyf.addr
+    delete  lyf["xxx"]
+    console.log(lyf)
+
+
+    const name = "fengfeng"
+    const obj = {
+        [name]: ""
+    }
+    console.log(obj)
+
+</script>
+</body>
+</html>

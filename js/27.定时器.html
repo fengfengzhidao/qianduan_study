@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器</title>
+</head>
+<body>
+<script>
+    function handler(){
+        console.log("handler")
+    }
+    const timer = setTimeout(handler, 3000)
+    console.log(timer)
+    clearTimeout(timer)
+    // handler()
+
+    let count = 0;
+    const timer1 = setInterval(()=>{
+        if (count === 3){
+            clearInterval(timer1)
+            return
+        }
+        console.log(new Date().toLocaleString())
+        count ++
+    }, 1000)
+    console.log(timer1)
+
+</script>
+</body>
+</html>

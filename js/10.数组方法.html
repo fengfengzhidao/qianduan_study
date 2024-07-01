@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>数组方法</title>
+</head>
+<body>
+<script>
+    const a1 = ["fengfeng", "zhangsan", "lisi"]
+    a1.push("王五")
+    const l = a1.push("z1", "z2")
+    console.log(l, a1)
+    const a2 = ["fengfeng", "zhangsan", "lisi"]
+    const item = a2.pop()
+    console.log(item, a2)
+
+    const a3 = ["fengfeng", "zhangsan", "lisi"]
+    const fi = a3.shift()
+    console.log(fi, a3)
+
+    const a4 = ["fengfeng", "zhangsan", "lisi"]
+    const l1 = a4.unshift("小红")
+    console.log(l1, a4)
+
+    const a5 = ["fengfeng", "zhangsan", "lisi"]
+
+    const s = a5.join(",")
+    console.log(s) // fengfeng,zhangsan,lisi
+    console.log(a5.join()) // 默认就是,
+    console.log(a5.join("|")) // fengfeng|zhangsan|lisi
+
+
+    const a6 = [0, 2, 1, 5]
+    // const a7 = a6.sort() // 升序
+    // console.log(a6, a7)
+    // const a8 = a6.reverse() // 反转
+    // console.log(a8, a6)
+
+    // [4, 2, 1, 5] a-b  2-4=-2 2,4 升序
+    //  [4, 2, 1, 5] b-a 4-2=2 4,2 降序
+    //  [0, 2, 1, 5] a-b 2-0=2 0,2 升序
+    //  [0, 2, 1, 5] b-a 0-2=-2 2,0 降序
+    a6.sort(function (a, b){
+        console.log(a, b)
+        return b-a
+    })
+    console.log(a6)
+
+    const a7 = ["fengfeng", "zhangsan", "lisi"]
+    const a8 = a7.splice(1, 1)
+    console.log(a8) // 被删除的数组  ["zhangsan"]
+    console.log(a7) // 原位删除 ["fengfeng","lisi"]
+
+</script>
+</body>
+</html>

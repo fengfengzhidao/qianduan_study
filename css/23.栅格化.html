@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>栅格化</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .row {
+            display: flex;
+        }
+        .row .col{
+            height: 100%;
+        }
+        .col-1{
+            flex: 0 0 10%;
+        }
+        .col-2{
+            flex: 0 0 20%;
+        }
+        .col-3{
+            flex: 0 0 30%;
+        }
+        .col-4{
+            flex: 0 0 40%;
+        }
+        .col-5{
+            flex: 0 0 50%;
+        }
+        .col-6{
+            flex: 0 0 60%;
+        }
+        .col-7{
+            flex: 0 0 70%;
+        }
+        .col-8{
+            flex: 0 0 80%;
+        }
+        .col-9{
+            flex: 0 0 90%;
+        }
+        .col-10{
+            flex: 0 0 100%;
+        }
+
+
+        .c1{
+            height: 200px;
+            background-color: #f0eeee;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container{
+            width: 1000px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="c1">
+    <div class="row container">
+        <div class="row col col-6" style="background-color: white">
+            <div class="col col-4" style="background-color: #3be598"></div>
+            <div class="col col-4" style="background-color: #5cce9b"></div>
+            <div class="col col-2" style="background-color: #52806b"></div>
+        </div>
+        <div class="col col-1"></div>
+        <div class="col col-3" style="background-color: white"></div>
+    </div>
+</div>
+
+</body>
+</html>

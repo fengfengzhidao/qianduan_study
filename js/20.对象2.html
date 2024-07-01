@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>对象2</title>
+</head>
+<body>
+<script>
+    const obj = {name: "王五", addr: "长沙"}
+    const source = {
+        name: "枫枫",
+        info: {
+            age: 21
+        },
+        likes: []
+    }
+    Object.assign(obj, source)
+    source.info.age = 22 // 最终会影响到 obj里面的age
+    source.name = "zhangsan" // 外层的不会影响
+    source.likes.push("篮球") // 最终会影响到 obj里面的likes
+    console.log(obj)
+
+    const o1 = {name: "枫枫"}
+
+
+    Object.defineProperty(o1, "age", {
+        value: 21,
+        writable: false, // 是否可修改
+        enumerable: false, // 是否可枚举
+        configurable: false, // 是否可删除
+    })
+
+    // o1.age = 22
+    delete o1.age
+    console.log(o1)
+
+    console.log("Object.keys", Object.keys(o1)) // 获取可枚举的属性列表
+    console.log("Object.getOwnPropertyNames", Object.getOwnPropertyNames(o1)) // 获取属性列表
+
+</script>
+</body>
+</html>

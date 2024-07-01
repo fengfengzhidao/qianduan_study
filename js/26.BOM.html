@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM</title>
+</head>
+<body>
+
+<button onclick="forword()">前进</button>
+<button onclick="back()">后退</button>
+<button onclick="go(1)">前进1页</button>
+<button onclick="go(-1)">后退1页</button>
+
+<script>
+    function forword(){
+        history.forward()
+    }
+    function back(){
+        history.back()
+    }
+    function go(n){
+        history.go(n)
+    }
+    console.log(confirm("确定要删除吗？"))
+    console.log(123)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>逻辑运算符</title>
+</head>
+<body>
+<script>
+    const name = "fengfeng"
+    const age = 12
+    console.log(age >= 18 && name.startsWith("f"))
+    console.log(age >= 18 || name.startsWith("f"))
+    console.log(!(age >= 18) )
+
+    function t(){
+        console.log("t")
+        return true
+    }
+
+    console.log(-1>0 && t()) // 不会执行t
+    console.log(1>0 || t()) //  不会执行t
+
+</script>
+</body>
+</html>

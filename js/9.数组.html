@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>数组</title>
+</head>
+<body>
+<script>
+    const a1 = ["fengfeng", "zhangsan", "lisi"]
+    // index      0              1        2
+    console.log(a1[0]) // 获取数组的第一个元素
+    console.log(a1.length) // 获取数组的长度=数组中元素的个数
+    console.log(a1[a1.length - 1]) // 获取数组的最后一个元素
+    const a2 = Array("fengfeng", "zhangsan", "lisi")
+    console.log(a2)
+
+    for (let i = 0; i < a1.length; i++) {
+        console.log(i, a1[i])
+    }
+
+    for (const value of a2) {
+        console.log(value)
+    }
+
+    console.log(typeof a1)
+
+    console.log(Array.isArray(a1)) // true
+    console.log(Array.isArray(1)) // false
+
+    console.log(a1 instanceof Array) // true
+
+</script>
+</body>
+</html>

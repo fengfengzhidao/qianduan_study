@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>渐变</title>
+    <style>
+        .line{
+            width: 300px;
+            height: 300px;
+            /*background-image: linear-gradient(60deg, blue,  red);*/
+            background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+        }
+        .radial{
+            width: 300px;
+            height: 300px;
+            background-image: radial-gradient(blue 50%,  red 50%);
+        }
+
+        .ellipse{
+            width: 500px;
+            height: 300px;
+            background-image: radial-gradient(ellipse, blue 50%,  red 50%);
+        }
+        .repeating{
+            width: 300px;
+            height: 300px;
+            background-image: repeating-radial-gradient(blue 10%, red 20%);
+        }
+
+        .border{
+            width: 300px;
+            height: 300px;
+            background-color: #3be598;
+            border: 20px solid;
+            border-image: linear-gradient(to right, blue,  red) 1;
+        }
+        .tx{
+            display: inline-block;
+            background-image: linear-gradient(to right, green, rosybrown);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="line">
+
+</div>
+<div class="radial">
+
+</div>
+<div class="ellipse">
+
+</div>
+<div class="repeating">
+
+</div>
+
+<div class="border">
+
+</div>
+
+<div class="tx">
+    这是文字渐变
+</div>
+</body>
+</html>

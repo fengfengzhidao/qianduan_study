@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>dom-2</title>
+</head>
+<body>
+<div id="box" data-name="枫枫">
+    这是一个盒子
+</div>
+<script>
+    const dom = document.getElementById("box")
+    // 获取
+    console.log(dom.dataset.name)
+    console.log(dom.dataset["name"])
+    console.log(dom.dataset)
+
+    // 设置
+    dom.dataset.addr = "长沙市"
+
+    // 删除
+    delete dom.dataset.name
+
+    // 可以使用自定义属性的方式
+    console.log( dom.getAttribute("data-addr"))
+
+</script>
+
+<div class="box">
+
+</div>
+<script>
+    const box = document.querySelector(".box")
+    console.log(box.classList)
+    // 添加
+    box.classList.add("head")
+
+    // 是否包含
+    console.log(box.classList.contains("head"))
+
+    // 有就删除，没有就创建
+    box.classList.toggle("footer")
+    box.classList.toggle("footer")
+
+    // 删除
+    box.classList.remove("head")
+
+    // 替换
+    box.classList.replace("box", "box1")
+</script>
+
+
+</body>
+</html>

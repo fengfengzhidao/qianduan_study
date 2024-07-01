@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>null和undefined</title>
+</head>
+<body>
+<script>
+    function newObj(name){
+        return null
+    }
+
+    console.log(newObj("张三"))
+    console.log(newObj("张三") === null)
+    console.log(typeof null)
+
+    let name1
+    console.log(name1)
+    const xx = {
+        name: "xxx"
+    }
+    console.log(xx["age"])
+
+    console.log(null == undefined)
+    console.log(null === undefined)
+    console.log(Boolean(null),  Boolean(undefined))
+
+</script>
+</body>
+</html>

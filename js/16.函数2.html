@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>函数2</title>
+</head>
+<body>
+<script>
+    function set(){
+
+    }
+
+    console.log(set()) // undefined
+
+    function getName(){
+        return "fengfeng"
+    }
+
+    const lis = [1,"sss", getName]
+    console.log(lis[2]())
+
+
+    const obj = {
+        name: "fengfeng",
+        eat: function (){
+            return `${this.name}在吃饭`
+        },
+        say: ()=>{
+            // 监听函数中不能用this
+            console.log("在说话")
+        },
+        study(){
+            console.log(`${this.name}在学习`)
+        }
+    }
+
+    console.log(obj.name)
+    console.log(obj.eat())
+    obj.say()
+    obj.study()
+
+
+
+
+
+</script>
+</body>
+</html>

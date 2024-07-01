@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>class</title>
+</head>
+<body>
+<script>
+    class Car {
+        name
+        price
+
+        constructor(name, price) {
+            this.name = name
+            this.price = price
+        }
+
+        running() {
+            console.log("车在跑")
+        }
+
+    }
+
+    // 电动车
+    class ElectricVehicle extends Car {
+        endurance // 续航
+        constructor(name, price, endurance) {
+            super(name, price); // 实例父类
+            this.endurance = endurance
+        }
+
+        charge() {
+            console.log(`电动车 ${this.name} 在充电`)
+        }
+
+    }
+
+    const ddc = new Car("电动车", 3000)
+    console.log(ddc)
+    ddc.running()
+    const xc = new Car("小车", 300000)
+    console.log(xc)
+    const yd = new ElectricVehicle("雅迪", 2000, 50)
+    console.log(yd)
+    yd.charge()
+
+    class Animal {
+        static name = "动物"
+
+        static eat() {
+            console.log("在吃饭")
+        }
+    }
+
+    Animal.eat()
+    console.log(Animal.name)
+
+
+    class Y {
+        name = "y"
+        running = function (){
+            console.log("running")
+        }
+        eat(){
+            console.log("eat")
+        }
+    }
+
+    const y = new Y()
+    console.log(y)
+
+</script>
+</body>
+</html>

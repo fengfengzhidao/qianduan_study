@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>递归函数</title>
+</head>
+<body>
+<script>
+    const list = [
+        "你好", "吃饭了吗",
+        [
+            "好",
+            [
+                [
+                    "abc"
+                ]
+            ]
+        ]
+    ]
+    console.log(list)
+
+    const a1 = []
+    function oneArray(array){
+        for (const arrayElement of array) {
+            if (arrayElement instanceof Array){
+                oneArray(arrayElement)
+                continue
+            }
+            a1.push(arrayElement)
+        }
+    }
+    oneArray(list)
+    console.log(a1)
+
+
+    function oneArray1(array){
+        const a2 = []
+
+        function _oneArray(array){
+            for (const arrayElement of array) {
+                if (arrayElement instanceof Array){
+                    _oneArray(arrayElement)
+                    continue
+                }
+                a2.push(arrayElement)
+            }
+        }
+        _oneArray(array)
+        return a2
+    }
+
+    console.log(oneArray1(list))
+
+
+    function oneArray2(array){
+        const a3 = []
+        for (const arrayElement of array) {
+            if (arrayElement instanceof Array){
+                a3.push(...oneArray2(arrayElement))
+                continue
+            }
+            a3.push(arrayElement)
+        }
+        return a3
+    }
+
+    console.log(oneArray2(list))
+
+
+
+</script>
+</body>
+</html>

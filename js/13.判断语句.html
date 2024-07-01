@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>判断语句</title>
+</head>
+<body>
+<script>
+    const name = "fengfeng1"
+    if (name === "fengfeng") {
+        console.log("去度假")
+    }
+
+    // 如果代码语句只有一行，可以省略{}
+    if (name === "fengfeng")
+        console.log("去度假")
+    console.log("不管什么我都会执行")
+
+    if (name === "fengfeng") {
+        console.log("fengfeng去度假")
+    } else {
+        console.log("fengfeng继续搬砖")
+    }
+
+
+    const scope = 90
+    if (scope >= 90) {
+        console.log("A")
+    } else if (scope >= 80) {
+        console.log("B")
+    } else if (scope >= 60) {
+        console.log("C")
+    } else {
+        console.log("D")
+    }
+
+    if (scope >= 80) {
+        if (scope >= 90) {
+            console.log("A")
+        } else {
+            console.log("B")
+        }
+    } else {
+        if (scope >= 60) {
+            console.log("C")
+        } else {
+            console.log("D")
+        }
+    }
+
+    // 卫语句
+    function get_scope(scope) {
+        if (scope >= 90) {
+            console.log("A")
+            return
+        }
+        if (scope >= 80) {
+            console.log("B")
+            return;
+        }
+        if (scope >= 60) {
+            console.log("C")
+            return;
+        }
+        console.log("D")
+
+    }
+
+
+    const day = 7
+
+    switch (day) {
+        case 1:
+            console.log("周一")
+            break
+        case 2:
+            console.log("周二")
+            break
+        case 3:
+            console.log("周三")
+            break
+        case 4:
+            console.log("周四")
+            break
+        case 5:
+            console.log("周五")
+            break
+        case 6:
+            console.log("周六")
+            break
+        case 7:
+            console.log("周天")
+            break
+        default:
+            console.log("错误")
+    }
+
+
+</script>
+</body>
+</html>

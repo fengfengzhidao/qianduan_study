@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>博客前台</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .blog {
+
+        }
+
+        .blog .nav {
+            width: 100%;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.8);
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            z-index: 100;
+        }
+
+        .blog .nav .container {
+            align-items: center;
+        }
+
+        .blog .nav .left {
+            width: 10%;
+        }
+
+        .blog .nav .left div:nth-child(1) {
+            font-size: 22px;
+        }
+
+        .blog .nav .left div:nth-child(2) {
+            font-size: 12px;
+        }
+
+        .blog .nav .center {
+            width: 70%;
+        }
+
+        .blog .nav .center a {
+            margin-left: 20px;
+        }
+
+        .blog .nav .right {
+            width: 20%;
+            text-align: right;
+        }
+
+        .blog .banner {
+            height: 600px;
+            position: relative;
+        }
+
+        .blog .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog .banner .slogan {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            color: white;
+            transform: translate(-50%, -50%);
+        }
+
+        .blog .banner .slogan div {
+            text-align: center;
+        }
+
+        .blog .banner .slogan div:nth-child(1) {
+            font-size: 26px;
+        }
+
+        .blog .banner .slogan div:nth-child(2) {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .container {
+            width: 1200px;
+            display: flex;
+        }
+
+        .blog main {
+            background-color: #f0eeee;
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .blog main .container > .left {
+            width: calc(100% - 300px - 20px);
+            margin-right: 20px;
+        }
+
+        .blog main .container > .right {
+            width: 300px;
+        }
+
+
+        .blog main .news {
+            margin-bottom: 20px;
+        }
+        .blog main .tags {
+            margin-bottom: 20px;
+        }
+
+        .blog .footer{
+            height: 50px;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+        }
+
+
+        .card {
+            background-color: white;
+            border-radius: 5px;
+        }
+
+        .card .head {
+            padding: 20px 20px 10px 20px;
+            border-bottom: 1px solid #f0eeee;
+        }
+
+        .card .head .title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .card .body{
+            padding: 10px 20px 20px 20px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="blog">
+    <div class="nav">
+        <div class="container">
+            <div class="left">
+                <div>枫枫知道</div>
+                <div>FFENGZHIDAO</div>
+            </div>
+            <div class="center">
+                <a href="">首页</a>
+                <a href="">搜索</a>
+                <a href="">聊天室</a>
+            </div>
+            <div class="right">
+                <a href="">登录</a>
+            </div>
+        </div>
+    </div>
+    <div class="banner">
+        <img src="http://image.fengfengzhidao.com/gvb_1009/20231123092743__1123-e.png" alt="">
+        <div class="slogan">
+            <div>枫枫知道个人博客九代</div>
+            <div>我的九代博客</div>
+        </div>
+    </div>
+    <main>
+        <div class="container">
+            <div class="left">
+                <div class="card news">
+                    <div class="head">
+                        <div class="title">今日热搜</div>
+                    </div>
+                    <div class="body">
+
+                    </div>
+
+                </div>
+                <div class="card article">
+                    <div class="head">
+                        <div class="title">文章列表</div>
+                    </div>
+                    <div class="body">
+
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="card tags">
+                    <div class="head">
+                        <div class="title">标签云</div>
+                    </div>
+                    <div class="body">
+
+                    </div>
+                </div>
+
+                <div class="card user_info">
+                    <div class="head">
+                        <div class="title">个人信息</div>
+                    </div>
+                    <div class="body">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="footer">
+        建站日期：2023-02-15网站已运行: 493天15时32分45秒
+    </div>
+</div>
+</body>
+</html>

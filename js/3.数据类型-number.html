@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>数据类型-number</title>
+</head>
+<body>
+<script>
+    const a = 123
+    const a1 = Number(123)
+    console.log(a, typeof a)
+    console.log(a1, typeof a1)
+    const a2 = 0b110 //  6
+    console.log(a2)
+    const a3 = 0o11 // 9
+    console.log(a3)
+    // 0 1 2 3 4 5 6 7 8 9 a b c d e f
+    const a4 = 0xa1 // 10 * 16 + 1 = 161
+    console.log(a4)
+
+    const a5 = 3.14159265354
+    console.log(a5)
+    console.log(a5.toFixed(2))
+    console.log(a5.toFixed(0))
+
+    console.log(Number.parseInt(3.14)) // 3
+    console.log(Number.parseInt("5")) // 5
+    console.log(Number.parseInt("5.256")) // 5
+
+    console.log(Number.isInteger(1)) // true
+    console.log(Number.isInteger(1.2)) // false
+    console.log(Number.isInteger("1.2")) // false
+    console.log(Number.isInteger("1")) // false
+    console.log(Number.isInteger(-3)) // true
+
+    console.log(Math.round(3.5)) // 四舍五入 4
+    console.log(Math.round(3.4)) // 四舍五入 3
+    console.log(Math.ceil(1.0000001)) // 向上取整 2
+    console.log(Math.ceil(1.9)) // 向上取整 2
+    console.log(Math.floor(1.9)) // 向下取整 1
+    console.log(Math.floor(1.001)) // 向下取整 1
+
+
+</script>
+</body>
+</html>

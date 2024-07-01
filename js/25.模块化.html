@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>模块化</title>
+</head>
+<body>
+<script type="module">
+    // import {add, name, obj} from "./module/m1.js";
+    // import m1 from "./module/m1.js"
+    // console.log(add(1,2))
+    // console.log(name, obj)
+    // console.log(m1)
+
+    const m2 = (function () {
+        function add() {
+            console.log("add1")
+        }
+
+        return {
+            add
+        }
+
+    }())
+    const m3 = (function () {
+        function add() {
+            console.log("add2")
+        }
+
+        return {
+            add
+        }
+
+    }())
+    console.log(m2)
+    m2.add()
+    console.log(m3)
+    m3.add()
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>事件冒泡</title>
+    <style>
+        .p1{
+            width: 600px;
+            height: 600px;
+            background-color: #0dc973;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .p2{
+            width: 400px;
+            height: 400px;
+            background-color: #0db3c9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .p3{
+            width: 200px;
+            height: 200px;
+            background-color: #ce1d81;
+        }
+
+        .box{
+            width: 300px;
+            padding: 20px;
+            background-color: #f0eeee;
+        }
+        .s{
+            width: 100px;
+            height: 100px;
+            background-color: #0dc973;
+        }
+    </style>
+</head>
+<body>
+<div class="p1">
+    <div class="p2">
+        <div class="p3">我是p3
+            <a href="https://baidu.com">百度</a>
+        </div>
+    </div>
+</div>
+<script>
+   const p1 = document.querySelector(".p1")
+   const p2 = document.querySelector(".p2")
+   const p3 = document.querySelector(".p3")
+   p3.onclick = function (e){
+       console.log("p3", e.target)
+
+   }
+   p2.onclick = function (e){
+       console.log("p2", e.target)
+       e.stopPropagation() // 取消冒泡
+   }
+   p1.onclick = function (e){
+       console.log("p1", e.target)
+   }
+
+   const a = document.querySelector("a")
+   a.onclick = function (e){
+       const ok = confirm(`你确定要访问 ${e.target.getAttribute("href")}吗`)
+       if (!ok){
+           e.preventDefault() // 取消标签的默认行为
+       }
+   }
+</script>
+
+
+<div class="box">
+    <div class="s s1">s1</div>
+    <div class="s s2">s2</div>
+    <div class="s s3">s3</div>
+    <div class="s s4">s4</div>
+    <div class="s s5">s5</div>
+</div>
+<script>
+    const box = document.querySelector(".box")
+    box.onclick = function (e){
+        console.log(e.target)
+    }
+</script>
+
+</body>
+</html>

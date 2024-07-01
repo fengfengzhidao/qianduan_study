@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>盒模型</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+
+            width: 200px;
+            height: 200px;
+            padding: 20px;
+            background: burlywood;
+            border: 10px solid red;
+            margin: 20px;
+        }
+
+
+        .block{
+            width: 300px;
+        }
+        .sub_block{
+            background: burlywood;
+        }
+        .sub_block1{
+            background: blue;
+            width: 100px;
+            padding: 10px;
+            margin: 10px;
+            border: 10px solid red;
+        }
+
+        .inline{
+            display: inline-block;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="box">
+    内容
+</div>
+
+<div class="box">
+    内容
+</div>
+
+<!--<div class="block">-->
+<!--    <div class="sub_block1 inline">-->
+<!--        你好-->
+<!--    </div>-->
+<!--    <div class="sub_block inline">-->
+<!--        你好-->
+<!--    </div>-->
+<!--</div>-->
+
+
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>dom-1</title>
+</head>
+<body>
+<div id="box">
+    这是一个盒子
+</div>
+<a href="xxx" xxx="abc" id="a">a标签</a>
+<div class="name">枫枫知道1</div>
+<div class="name">枫枫知道2</div>
+<script>
+    const dom = document.getElementById("box")
+    console.log(dom)
+    console.log(document.getElementsByClassName("name"))
+    console.log(document.querySelector(".name"))
+    console.log(document.querySelectorAll(".name"))
+    console.log(document.querySelector("#box"))
+
+
+    console.log(dom.tagName)
+    console.log(document.getElementById("a").tagName)
+
+    // 属性操作
+    const a = document.getElementById("a")
+    // 获取属性
+    console.log(a.getAttribute("href"))
+    // 设置、修改属性
+    a.setAttribute("href", "https://www.fengfengzhidao.com")
+    // 删除属性
+    a.removeAttribute("xxx")
+
+</script>
+</body>
+</html>

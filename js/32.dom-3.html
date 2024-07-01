@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>dom-3</title>
+    <style>
+        .name{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <a href="htt://www.fengfengzhidao.com">点我</a>
+    <span>你好</span>
+</div>
+<script>
+    const box = document.getElementById("box")
+    console.log(box.innerText)
+    console.log(box.innerHTML)
+    console.log(box.outerHTML)
+
+    // box.innerText = "<a>xxx</a>"
+//     box.innerHTML = `
+//     <div>
+//     <span>123</span>
+//     <span>234</span>
+// </div>
+//     `
+//     box.outerHTML = "<a>xxx</a>"
+
+</script>
+
+<div class="name" style="font-size: 20px; background-color: #800e0e; color: white">枫枫知道</div>
+<script>
+    const dom = document.querySelector(".name")
+    console.log(dom.style.fontSize)
+    console.log(dom.style.backgroundColor)
+    console.log(dom.style.color)
+    console.log(dom.style.textAlign) // 只能获取行内的，其他地方的获取不到
+
+    dom.style.fontSize = "30px"
+    dom.style.padding = "30px"
+
+    console.log(getComputedStyle(dom).textAlign) // 获取计算后的style样式
+</script>
+</body>
+</html>

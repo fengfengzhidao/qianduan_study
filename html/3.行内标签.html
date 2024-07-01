@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>行内标签</title>
+</head>
+<body>
+<a href="2.块级标签.html">块级标签</a>
+<a href="http://www.fengfengzhidao.com">我的博客</a>
+<a href="http://www.fengfengzhidao.com" target="_blank">我的博客(新开窗口)</a>
+<a href="avatar.png" download>头像下载</a>
+<a href="avatar.png" download="a1.png">头像下载</a>
+
+<br>
+
+<form method="get">
+    <label for="user">
+       用户名
+    </label>
+    <input id="user" type="text" placeholder="提示词" value="ff" name="name">
+    <input type="password">
+    <input type="radio" name="sg" value="pg"> 苹果
+    <input type="radio" name="sg" value="xj"> 香蕉
+    <input type="radio" name="sg" value="xg"> 西瓜
+
+    <input type="checkbox" name="sg1" value="pg"> 苹果
+    <input type="checkbox" name="sg1" value="xj"> 香蕉
+    <input type="checkbox" name="sg1" value="xg"> 西瓜
+
+    <label for="file">选择文件</label>
+    <input id="file" style="display: none" type="file">
+
+    <input type="color" name="color">
+    <input type="date" name="date">
+
+    <input type="submit" value="提交">
+
+    <select name="select" multiple>
+        <option value="zs">这是</option>
+        <option value="xl">下拉</option>
+        <option value="bq">标签</option>
+    </select>
+</form>
+
+<img src="avatar.png" alt="">
+<img src="avatar.png" width="200" alt="">
+<img src="avatar.png" height="100" alt="">
+<img src="avatar.png" height="100" width="200" alt="">
+
+<img src="avatar1.png" alt="错误的图片">
+
+
+
+</body>
+</html>

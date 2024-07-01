@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>防抖和节流</title>
+</head>
+<body>
+<button onclick="newHandler('hello')">防抖</button>
+<button onclick="throttleHandler('hello')">节流</button>
+<script>
+    function handler(name){
+        console.log("被点击了", name)
+    }
+
+    function debounce(fn, delay){
+        let timer = null
+        return function (){
+            // 如果之前有定时器在，要清除定时器
+            clearTimeout(timer)
+            timer = setTimeout(()=>{
+                fn.apply(this, arguments)
+            }, delay)
+
+        }
+    }
+
+    const newHandler = debounce(handler, 1000)
+
+    function throttle(fn, delay){
+        let t1 = Date.now()
+        let timer = null
+        return function (){
+            const t2 = Date.now()
+            clearTimeout(timer)
+            if (t2 - t1 > delay){
+                // 超过了节流时间，可以执行
+                fn.apply(this, arguments)
+                t1 = t2
+            }else {
+                // 在节流周期内
+                timer = setTimeout(()=>{
+                    fn.apply(this, arguments)
+                }, t2 - t1)
+            }
+        }
+
+    }
+
+   const throttleHandler = throttle(handler, 1000)
+
+
+</script>
+</body>
+</html>

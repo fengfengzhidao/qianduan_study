@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>数据类型-string</title>
+</head>
+<body>
+<script>
+    const s1 = "ffzd"
+    console.log(s1, typeof s1)
+    const s2 = String("枫枫")
+    console.log(s2, typeof s2)
+
+    console.log(s1[0]) // f
+    console.log(s1[2]) // z
+
+    console.log(s1.indexOf('z')) // 2
+    console.log(s1.indexOf('1')) // -1
+    console.log(s1.indexOf('zd')) // 2
+
+    const s3 = "枫枫,zhangsan,lisi"
+    const a = s3.split(",")
+    console.log(a[0], a[1])
+
+    const s4 = "枫枫,zhangsan,lisi"
+    console.log(s4.slice(3, 11)) // 前闭后开 zhangsan
+
+    const s5 = "枫枫,zhangsan,lisi"
+    console.log(s5.includes("lisi")) // true
+    console.log(s5.indexOf("lisi") !== -1) // true
+
+
+    const s6 = "   我的名字是枫枫   "
+    console.log(s6)
+    console.log(s6.trim())
+
+</script>
+</body>
+</html>

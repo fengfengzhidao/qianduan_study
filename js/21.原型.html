@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>原型</title>
+</head>
+<body>
+<script>
+    const obj = {}
+    console.log(obj)
+    const o1 = new Object({})
+    Object.prototype.name = "枫枫"
+    console.log(o1)
+
+    Object.prototype.toString = function (){
+        return "这是对象的toString方法"
+    }
+
+
+    console.log(obj + "")
+    console.log(obj.toString())
+
+    const o2 = Object.create({
+        eat(){
+            console.log("吃饭")
+        }
+    })
+    o2.__proto__.study = function (){
+        console.log("在学习")
+    }
+    console.log(o2)
+
+    function People(name){
+        this.name = name
+    }
+
+    function _new(fn, ...args){
+        // 1. 创建一个新的对象
+        const o = {}
+        // 2. 把该对象的__proto__属性设置为构造函数的prototype属性，即完成原型链
+        o.__proto__ = fn.prototype
+        // 3. 执行构造函数中的代码，构造函数中的this指向该对象(obj)
+        fn.apply(o, args)
+        // 4. 返回对象
+        return o
+    }
+    const o3 = new People("枫枫")
+    console.log(o3)
+    const o4 = _new(People, "枫枫")
+    console.log(o4)
+
+
+
+
+</script>
+</body>
+</html>

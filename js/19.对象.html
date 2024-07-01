@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+</head>
+<body>
+<script>
+    const obj = {
+        name: "枫枫",
+        eat: function (){
+            console.log(`${this.name}在吃饭`)
+        }
+    }
+    console.log(obj)
+
+    const o1 = new Object({name: "枫枫"})
+    console.log(o1)
+
+    function People(name, age){
+        this.name = name
+        this.age = age
+    }
+
+    People.prototype.eat = function (){
+        console.log(`${this.name}在吃饭`)
+    }
+
+    const o2 = new People("枫枫", 21)
+    console.log(o2)
+    o2.eat()
+
+
+    // 其中的name和age属性 是在原型上
+    const o3 = Object.create({name: "枫枫", age: 21, eat: function (){}})
+    console.log(o3)
+    console.log(o3.name)
+    o3.name = "lisi"
+    // 给自己加了一个name属性
+    console.log(o3.name)
+    // 如果自己有这个属性，就用自己的，没有就去原型上去找
+
+    console.log(o3.name)
+    console.log(o3["name"])
+
+    delete  o3.name // 只能删自己身上的属性
+    delete  o3.age
+    console.log(o3)
+
+    o3.addr = "长沙市"
+
+    console.log("age" in o3) // true
+    console.log("addr" in o3) // true
+    console.log("eat" in o3) // true
+
+    console.log(o3.hasOwnProperty("addr")) // true
+    console.log(o3.hasOwnProperty("age")) // false
+
+
+    for (const o3Key in o3) {
+        console.log(o3Key)
+    }
+
+
+    console.log(Object.keys(o3)) // ["addr"]
+
+</script>
+</body>
+</html>

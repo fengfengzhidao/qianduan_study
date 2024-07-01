@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>时间</title>
+</head>
+<body>
+<script>
+    console.log(new Date().getTime()) // 获取时间戳 13位
+    // 时间戳转换为js时间对象
+    // 1719414979389
+    console.log(new Date(1719414979389))
+    const date = new Date() // 获取最新的时间
+
+    // 年月日时分秒
+    console.log(date.getFullYear())
+    console.log(date.getMonth() + 1) // 月是从0开始
+    console.log(date.getDate())
+    console.log(date.getHours())
+    console.log(date.getMinutes())
+    console.log(date.getSeconds())
+    console.log(date.getDay()) // 周几
+
+    function parseDate(dateString) {
+        let date
+        if (dateString) {
+            date = new Date(dateString)
+        } else {
+            date = new Date()
+        }
+        const y = date.getFullYear().toString()
+        const M = (date.getMonth() + 1).toString().padStart(2, "0")
+        const d = date.getDate().toString().padStart(2, "0")
+        const h = date.getHours().toString().padStart(2, "0")
+        const m = date.getMinutes().toString().padStart(2, "0")
+        const s = date.getSeconds().toString().padStart(2, "0")
+        return `${y}-${M}-${d} ${h}:${m}:${s}`
+    }
+
+    console.log(parseDate("2022-12-12 15:04:05"))
+    console.log(parseDate())
+
+    const d1 = new Date()
+    console.log(parseDate(d1))
+    // 七天前
+    d1.setDate(d1.getDate() - 7)
+    // 5小时后
+    d1.setHours(d1.getHours() + 5)
+    console.log(parseDate(d1))
+
+    function timeDiff(time) {
+        const t1 = new Date(time).getTime()
+        const t2 = new Date()
+        const diff = (t1 - t2) / 1000
+        if (diff <= 0) {
+            return "这是一个过去的时间"
+        }
+
+        // 时间的差值，单位秒
+        // console.log(diff)
+
+        // 61 / 60
+        // 1分01秒
+        // 36001
+        // 1小时0分1秒
+
+        const day = Math.floor(diff / (60 * 60 * 24))
+        const hour = Math.floor(diff / (60 * 60))
+        const min = Math.floor(diff / 60)
+        const s = Math.floor(diff)
+        // console.log(day, hour, min, s)
+        if (day > 0) {
+            return `${day}天${hour % 24}小时${min % 60}分钟${s % 60}秒`
+        } else if (hour > 0) {
+            return `${hour}小时${min % 60}分钟${s % 60}秒`
+        } else if (min > 0) {
+            return `${min}分钟${s % 60}秒`
+        } else {
+            return `${s}秒`
+        }
+
+    }
+
+    console.log(timeDiff("2024-06-27 23:56:05"))
+
+
+    function timeOldDiff(time) {
+        const t1 = new Date(time).getTime()
+        const t2 = new Date()
+        const diff = (t2 - t1) / 1000
+        if (diff <= 0) {
+            return "这是一个未来的时间"
+        }
+        // 先除大的
+        const y = Math.floor(diff / (60 * 60 * 24 * 365))
+        if (y > 0) {
+            return `${y}年前`
+        }
+        const month = Math.floor(diff / (60 * 60 * 24 * 30))
+        if (month > 0) {
+            return `${month}月前`
+        }
+        const week = Math.floor(diff / (60 * 60 * 24 * 7))
+        if (week > 0) {
+            return `${week}周前`
+        }
+        const day = Math.floor(diff / (60 * 60 * 24))
+        if (day > 0) {
+            return `${day}天前`
+        }
+        const h = Math.floor(diff / (60 * 60))
+        if (h > 0) {
+            return `${day}小时前`
+        }
+        const min = Math.floor(diff / 60)
+        if (min > 0) {
+            return `${min}分钟前`
+        }
+        return `${Math.floor(diff)}秒前`
+
+    }
+
+    console.log(timeOldDiff("2023-06-26 12:56:05"))
+    console.log(timeOldDiff("2024-05-26 12:56:05"))
+    console.log(timeOldDiff("2024-06-11 12:56:05"))
+    console.log(timeOldDiff("2024-06-27 00:00:05"))
+    console.log(timeOldDiff("2024-06-27 00:08:05"))
+
+
+</script>
+</body>
+</html>

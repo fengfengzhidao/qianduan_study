@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>节点操作</title>
+</head>
+<body>
+<div id="box">
+    <div class="d1">1</div>
+    <div class="d2">
+        <div class="dd2">2</div>
+    </div>
+</div>
+<script>
+    // 创建节点
+    const dom = document.createElement("a")
+    dom.setAttribute("href", "https://www.fengfengzhidao.com")
+    dom.innerText = "枫枫知道"
+
+    // 插入子节点
+    const box = document.getElementById("box")
+    // box.appendChild(dom)
+    // box.append(dom)
+
+
+    // 在任意位置之前插入
+    // box.insertBefore(dom, null)
+    // console.log(box.children)
+    // box.insertBefore(dom, box.children[1])
+
+    // box.insertBefore(dom, document.querySelector(".d2"))
+
+
+    const d1 = document.querySelector(".d1")
+    // d1.before(dom) // 在d1的前面插入
+    d1.after(dom) // 在d1的后面插入
+
+
+    // const d2 = document.querySelector(".d2")
+    // console.log(d2.removeChild(d2.querySelector(".dd2"))) // 删除子节点，并返回被删除的子节点
+    //
+    // d2.remove() // 删除自己
+
+    const d2 = document.querySelector(".d2")
+    console.log(d2.children) // 获取它的子节点列表
+    console.log(d2.parentNode) // 获取它的父亲节点
+
+
+
+</script>
+</body>
+</html>

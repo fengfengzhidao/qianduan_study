@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器</title>
+
+    <style>
+        #box {
+            color: red;
+        }
+
+        .footer {
+            background: rebeccapurple;
+            color: white;
+        }
+
+        .red {
+            color: red;
+        }
+
+        h2 {
+            font-size: 30px;
+        }
+
+        a[href] {
+            color: red;
+        }
+
+        a[href="http://docs.fengfengzhidao.com"] {
+            color: aquamarine;
+        }
+
+        * {
+            margin: 0;
+        }
+
+        div.footer.red {
+            background: brown;
+        }
+
+        .footer, h2 {
+            font-size: 40px;
+        }
+
+        .box .menu {
+            color: brown;
+        }
+
+        .box > .children {
+            color: antiquewhite;
+        }
+
+        .s1 + .s2 {
+            color: red;
+        }
+
+        .s1 ~ .s3 {
+            color: chartreuse;
+            font-size: 20px;
+        }
+
+
+        .wl {
+            background: aquamarine;
+        }
+
+        .wl:hover {
+            background: aqua;
+        }
+
+        ul li:nth-child(2) {
+            font-size: 20px;
+        }
+
+        ul li:nth-child(even) {
+            background: aquamarine;
+        }
+
+        ul li:nth-child(4n+1) {
+            color: red;
+        }
+
+        ul li:first-child {
+            font-size: 30px;
+        }
+
+        ul li:last-child {
+            background: red;
+        }
+
+        .not > div:not(.b) {
+            background: burlywood;
+        }
+
+
+        .wys {
+
+        }
+
+        .wys::after {
+            /*之后*/
+            content: "";
+            width: 20px;
+            height: 20px;
+            background: burlywood;
+            display: inline-block;
+        }
+
+        .wys::before {
+            /*之前*/
+            content: "之前";
+        }
+
+
+        #li1{
+            color: green!important;
+        }
+
+    </style>
+</head>
+<body>
+<div id="box">box</div>
+
+<div class="footer">
+    footer
+</div>
+
+<div class="footer red">
+    footer
+</div>
+
+<h2>你好</h2>
+
+<a href="http://www.fengfengzhidao.com">枫枫知道</a>
+<a href="http://docs.fengfengzhidao.com">枫枫知道文档</a>
+<a>枫枫知道没有href</a>
+
+<div class="box">
+    <div class="user">
+        <div class="menu">
+            菜单
+        </div>
+    </div>
+    <div class="children">
+        儿子
+    </div>
+</div>
+
+
+<div class="s1">
+    s1
+</div>
+<div class="s2">
+    s2
+</div>
+<div class="s3">
+    s3
+</div>
+
+
+<div class="wl">
+    伪类
+</div>
+
+
+<ul>
+    <li style="color: blue" id="li1">1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+</ul>
+
+<div class="not">
+    <div class="b">123</div>
+    <div>123</div>
+    <div>123</div>
+    <div>123</div>
+</div>
+
+
+<div class="wys">
+    这是伪元素
+</div>
+
+</body>
+</html>

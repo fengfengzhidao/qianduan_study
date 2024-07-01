@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>循环语句</title>
+</head>
+<body>
+<script>
+    // 1+2+...+100
+    let sum = 0
+    for (let i = 1; i <= 100; i++) {
+        // 循环体
+        sum += i // sum = sum+1
+    }
+    // i=1  sum = 0 + 1
+    // i=2 sum = 1+2
+    // i=3 sum = 3 + 3
+    // i=4 sum = 6 + 4
+    // ...
+    console.log(sum)
+
+
+    const obj = {
+        name:"枫枫",
+        age: 21
+    }
+    for (const objKey in obj) {
+        console.log(objKey)
+    }
+
+    const array = ["枫枫", "张三"]
+    for (const item of array) {
+        console.log(item)
+    }
+
+    // 1 + 2 + ... + 100
+
+    let i = 1
+    let result = 0
+
+    while (i <= 100){
+        // 循环体
+        result += i
+        i ++
+    }
+    console.log(result)
+
+    // 1 + 2 + ... + 100
+    let o = 1
+    let res = 0
+    do {
+        res += o
+        o ++
+    }while (o <= 100)
+
+    console.log(res)
+
+
+
+    for (let j = 1; j <= 10; j++) {
+        if (j === 3){
+            console.log(`吃到第${j}个包子，发现虫子，这个包子我不吃了`)
+            continue
+        }
+        console.log(`吃到第${j}个包子`)
+    }
+
+    for (let j = 1; j <= 10; j++) {
+        if (j === 3){
+            console.log(`吃到第${j}个包子，发现虫子，我都不吃了`)
+            break
+        }
+        console.log(`吃到第${j}个包子`)
+    }
+
+</script>
+</body>
+</html>

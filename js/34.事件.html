@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+</head>
+<body>
+<input placeholder="用户名" oninput="input(event)">
+<button class="btn">点我</button>
+<button class="remove_event">移除事件</button>
+<script>
+    function input(e){
+        console.log(e.target.value)
+    }
+
+    const btn = document.querySelector(".btn")
+    // btn.onclick = function (e){
+    //     console.log(e.target)
+    // }
+
+    function click(e){
+        console.log(e.target)
+    }
+
+    btn.addEventListener("click", click)
+    // btn.addEventListener("click", function (e){
+    //     console.log(2, e.target)
+    // })
+
+    // 移除事件
+    const removeEvent = document.querySelector(".remove_event")
+    removeEvent.onclick = function (){
+        btn.removeEventListener("click", click)
+    }
+
+</script>
+
+
+
+
+</body>
+</html>

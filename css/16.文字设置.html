@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>文字设置</title>
+    <style>
+        .txt {
+            font-size: 20px;
+            font-style: italic;
+        }
+
+        .sub {
+            font-size: 22px;
+            font-style: oblique;
+            font-weight: bold;
+            text-indent: 2rem;
+        }
+
+        a {
+            text-decoration: underline 10px coral;
+        }
+
+        .yw {
+            text-transform: uppercase;
+            word-spacing: 2rem;
+        }
+
+        .lh {
+            width: 400px;
+            line-height: 2rem;
+            letter-spacing: 0rem;
+        }
+
+        .ws {
+            white-space: pre;
+        }
+
+        .es{
+            width: 200px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .dh{
+            width: 200px;
+            /*溢出隐藏*/
+            overflow: hidden;
+            /*显示省略号*/
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            /*设置显示文本的行数*/
+            -webkit-line-clamp: 2;
+        }
+    </style>
+</head>
+<body>
+<div class="txt">
+    你好
+    <div class="sub">
+        挺好的
+    </div>
+</div>
+<a href="xxx">这是一个a标签</a>
+<div class="yw">
+    This is Fengfeng
+</div>
+<div class="lh">
+    很好的会更好很好的会更好很好的会更好很好的会更好很好的会更好很好的会更好很好的会更好很好的会更好很好的会更好很好的会更好很好的会更好很好的会更好很好的会更好很好的会更好很好的会更好很好的会更好很好的会更好
+    很好的会更好很好的会更好很好的会更好
+    很好的会更好很好的会更好
+    很好的会更好很好的会更好
+</div>
+
+<div class="ws">
+    你好
+    吃饭了么
+
+    还没呢
+</div>
+
+<div class="es">
+    合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个
+</div>
+
+<div class="dh">
+    合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个合适的几个
+</div>
+</body>
+</html>

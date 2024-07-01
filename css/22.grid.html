@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>grid</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .grid {
+            width: 300px;
+            height: 300px;
+
+            background-color: #f0eeee;
+            display: grid;
+            /*grid-template-columns: 100px auto 100px;*/
+            /*grid-template-rows: 200px 200px;*/
+
+            grid-template-rows: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            row-gap: 20px;
+            column-gap: 20px;
+        }
+
+        .grid .item {
+            width: 100%;
+            height: 100%;
+            background-color: #3be598;
+        }
+
+
+        .grid1 {
+            margin-top: 20px;
+            width: 400px;
+            height: 400px;
+            background-color: #f0eeee;
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px 100px 100px;
+            /*justify-content: center;*/
+            /*align-content: space-between;*/
+            place-content: end end;
+            row-gap: 20px;
+            column-gap: 20px;
+        }
+
+        .grid1 .item {
+            width: 100%;
+            height: 100%;
+            background-color: #3be598;
+        }
+
+
+        .grid2 {
+            margin-top: 20px;
+            width: 400px;
+            height: 400px;
+            background-color: #f0eeee;
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px 100px 100px;
+            /*justify-content: center;*/
+            /*align-content: space-between;*/
+            place-content: end end;
+            /*justify-items: center;*/
+            /*align-items: center;*/
+            place-items: end end;
+            row-gap: 20px;
+            column-gap: 20px;
+        }
+
+        .grid2 .item {
+            width: 50px;
+            height: 50px;
+            background-color: #3be598;
+        }
+
+        .item-5{
+            /*justify-self: center;*/
+            /*align-self: center;*/
+            place-self: center center;
+        }
+
+
+        .grid3 {
+            margin-top: 20px;
+            width: 400px;
+            height: 400px;
+            background-color: #f0eeee;
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px 100px 100px;
+            row-gap: 2px;
+            column-gap: 2px;
+        }
+
+        .grid3 .item {
+            width: 100%;
+            height: 100%;
+            background-color: #3be598;
+        }
+
+        .grid3 .item-5{
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+
+
+        .grid4 {
+            margin-top: 20px;
+            width: 400px;
+            height: 400px;
+            background-color: #f0eeee;
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            grid-template-rows: 100px 100px 100px;
+            row-gap: 2px;
+            column-gap: 2px;
+        }
+
+        .grid4 .item {
+            width: 100%;
+            height: 100%;
+            background-color: #3be598;
+        }
+
+        .grid4 .item-5{
+            grid-row-start: 2;
+            grid-row-end: 4;
+            grid-column-start: 2;
+            grid-column-end: 4;
+        }
+    </style>
+</head>
+<body>
+<div class="grid">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+</div>
+
+<div class="grid1">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+</div>
+
+
+<div class="grid2">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item item-5"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+</div>
+
+
+<div class="grid3">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item item-5"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item item-8"></div>
+</div>
+
+
+<div class="grid4">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item item-5"></div>
+    <div class="item"></div>
+</div>
+
+
+</body>
+</html>

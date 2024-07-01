@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式</title>
+</head>
+<body>
+<script>
+    const re1 = /1\d{10}/
+    const re2 = /1\d{10}/g
+    const re3 = new RegExp("1\d{10}", "g")
+
+    const s = "我的手机号是 15254586535， 他的手机号是 12558753652"
+    console.log(s.search(re1))
+    console.log(s.match(re1))
+    console.log(s.match(re2))
+
+    console.log("大傻春，你要干什么！, 你是大傻叉吗".replace("傻", "*")) // 替换1个
+    console.log("大傻春，你要干什么！, 你是大傻叉吗".replaceAll("傻", "*")) // 全部替换
+
+    console.log("大傻春，你要干什么！, 你是大傻叉吗".replace(/[傻叉]/, "*"))
+    console.log("大傻春，你要干什么！, 你是大傻叉吗".replace(/[傻叉]/g, "*"))
+
+    // 分组替换
+    const str = "my phone is 15162543254 my email is 745654@qq.com"
+    // 我的手机号是   我的邮箱是
+    const re4 = /^.*?(1\d{10}).*?([\w-]*?@\w+\.\w+)$/
+    const newStr = str.replace(re4, "我的手机号是:$1  我的邮箱是:$2")
+    console.log(newStr)
+
+    const newStr1 = str.replace(re4, function (data, g1, g2) {
+        // 是不是可以对分组中的内容做操作呀
+        const tel = Number(g1) + 1
+        return `我的手机号是:${tel.toString()}  我的邮箱是:${g2}`
+    })
+    console.log(newStr1)
+
+    console.log(/abc/.test("abcd")) // true
+    console.log(/abc/.test("abd")) // false
+
+
+    const res = re4.exec(str)
+    console.log(res)
+    console.log(res[1]) // 手机号，获取第一个分组
+
+    const re5 = /^.*?(?<phone>1\d{10}).*?(?<email>[\w-]*?@\w+\.\w+)$/
+    const res1 = re5.exec(str)
+    console.log(res1)
+    console.log(res1.groups.phone)
+    console.log(res1.groups.email)
+</script>
+</body>
+</html>

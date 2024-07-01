@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>数组方法2</title>
+</head>
+<body>
+<script>
+    const a1 = ["fengfeng", "zhangsan", "lisi"]
+    a1.forEach(function (value, index, array) {
+        console.log(value, index, array)
+    })
+
+    const a2 = a1.map(function (value, index, array) {
+        return value + "@qq.com"
+    })
+    console.log(a2) // ['fengfeng@qq.com', 'zhangsan@qq.com', 'lisi@qq.com'] 不会原位修改
+
+
+    const a3 = a1.filter(function (value, index, array) {
+        if (value === "zhangsan") {
+            return true
+        }
+    })
+    console.log(a3)
+
+
+    const a4 = [5, 1, 0, -1, 2]
+    console.log(a4.every(function (value){
+        if (value >= 0){
+            return true
+        }
+    }))
+
+    console.log(a4.some(function (value){
+        if (value >= 0){
+            return true
+        }
+    }))
+
+
+    const a5 = [5, 1, 0, -1, 2]
+    const item = a5.find(function (value, index, obj){
+        if (value >= 5){
+            return true
+        }
+    })
+    console.log(item) // 5 找不到就是undefined
+    const index = a5.findIndex(function (value, index, obj){
+        if (value >= 5){
+            return true
+        }
+    })
+    console.log(index) // 0 找不到就是-1
+
+
+</script>
+</body>
+</html>

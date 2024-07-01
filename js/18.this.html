@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>this</title>
+</head>
+<body>
+<script>
+    let fengfeng = "枫枫"
+    console.log(this)
+    // alert("123")
+
+
+
+    function get() {
+        console.log("get", this, arguments)
+    }
+    const set = ()=>{
+        console.log("set", this)
+    }
+
+    const obj = {
+        name: "fengfeng",
+        get: get,
+        set: set,
+    }
+
+    get()
+    obj.get()
+    set()
+    obj.set()
+
+
+    // 改变this
+
+    get.call(obj, 1,2,3)
+    get.apply(obj, [1,2,3])
+    get.bind(obj, 1,2,3)(4,5,6)
+
+
+    // 箭头函数没有办法修改this指向
+    set.call(obj, 1,2,3)
+    set.apply(obj, [1,2,3])
+    set.bind(obj, 1,2,3)(4,5,6)
+
+
+</script>
+</body>
+</html>

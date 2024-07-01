@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>变换</title>
+    <style>
+        .lx {
+            width: 100px;
+            height: 100px;
+            background-color: #3be598;
+            transition: all .3s ease-in;
+            margin: 40px;
+            transform-origin: right bottom;
+            transition-delay: 1s;
+        }
+        .lx:hover{
+            transform: rotate(405deg) ;
+        }
+        .box{
+            width: 40px;
+            height: 40px;
+
+            background-color: #800e0e;
+            transition: transform 0.3s;
+        }
+        .box:hover{
+            transform: translate(100px,20px);
+        }
+        .scale{
+            width: 40px;
+            height: 40px;
+            background-color: #0dc973;
+            transition: all 0.3s;
+        }
+        .scale:hover{
+            transform: scale(1.2);
+        }
+        .text{
+            font-size: 12px;
+            transform-origin: left;
+            transform: scale(0.5);
+        }
+    </style>
+</head>
+<body>
+<div class="lx">
+
+</div>
+<div class="box">
+
+</div>
+<div class="scale">
+    
+</div>
+<div class="text">
+    文本
+</div>
+</body>
+</html>
